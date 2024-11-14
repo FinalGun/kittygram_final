@@ -1,4 +1,8 @@
-![example branch parameter](https://github.com/github/docs/actions/workflows/main.yml/badge.svg?branch=main)
+![size repo](https://img.shields.io/github/repo-size/FinalGun/kittygram_final)
+![branch check runs](https://img.shields.io/github/check-runs/FinalGun/kittygram_final/main)
+![total commits](https://img.shields.io/github/commit-activity/t/FinalGun/kittygram_final)
+![last commit](https://img.shields.io/github/last-commit/FinalGun/kittygram_final)
+
 
 
 #  kittygram_final
