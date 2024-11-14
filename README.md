@@ -2,6 +2,7 @@
 ![branch check runs](https://img.shields.io/github/check-runs/FinalGun/kittygram_final/main)
 ![total commits](https://img.shields.io/github/commit-activity/t/FinalGun/kittygram_final)
 ![last commit](https://img.shields.io/github/last-commit/FinalGun/kittygram_final)
+![last commit](https://github.com/FinalGun/kittygram_final/actions/workflows/main.yml/badge.svg)
 
 
 
