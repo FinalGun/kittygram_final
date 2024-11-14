@@ -171,4 +171,4 @@ jobs:
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
-          message: Деплой успешно выполнен! Автор коммита:${{ github.actor }}. Сообщение:${{ github.event_name }}
+          message: Деплой успешно выполнен! Автор коммита:${{ github.actor }}.
