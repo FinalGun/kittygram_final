@@ -1,26 +1,41 @@
-#  Как работать с репозиторием финального задания
+#  kittygram_final
 
-## Что нужно сделать
+## Использованные технологии
 
-Настроить запуск проекта Kittygram в контейнерах и CI/CD с помощью GitHub Actions
+- Django: Основной фреймворк для создания веб-приложений. [Документация Django](https://www.djangoproject.com/)
+- Django REST Framework: Библиотека для создания RESTful API на Django. [Документация DRF](https://www.django-rest-framework.org/)
+- Pillow: Библиотека для обработки изображений. [Документация Pillow](https://pillow.readthedocs.io/en/stable/)
+- Junicorn: [Документация](https://docs.gunicorn.org/en/stable/settings.html)
+- Docker: Платформа контейнеризации [Документация](https://docs.docker.com/)
 
-## Как проверить работу с помощью автотестов
+## Необходимые переменные для файла .env:
 
-В корне репозитория создайте файл tests.yml со следующим содержимым:
-```yaml
-repo_owner: ваш_логин_на_гитхабе
-kittygram_domain: полная ссылка (https://доменное_имя) на ваш проект Kittygram
-taski_domain: полная ссылка (https://доменное_имя) на ваш проект Taski
-dockerhub_username: ваш_логин_на_докерхабе
+- POSTGRES_USER
+- POSTGRES_PASSWORD
+- POSTGRES_DB
+- DB_HOST
+- DB_PORT
+- SECRET_KEY
+- HOST
+- DNS
+
+## Установка
+
+Перейти в директорию с файлом docker-compose.production.yml и развернуть контейнеры:
 ```
-
-Скопируйте содержимое файла `.github/workflows/main.yml` в файл `kittygram_workflow.yml` в корневой директории проекта.
-
-Для локального запуска тестов создайте виртуальное окружение, установите в него зависимости из backend/requirements.txt и запустите в корневой директории проекта `pytest`.
-
-## Чек-лист для проверки перед отправкой задания
-
-- Проект Taski доступен по доменному имени, указанному в `tests.yml`.
-- Проект Kittygram доступен по доменному имени, указанному в `tests.yml`.
-- Пуш в ветку main запускает тестирование и деплой Kittygram, а после успешного деплоя вам приходит сообщение в телеграм.
-- В корне проекта есть файл `kittygram_workflow.yml`.
+    docker compose -f docker-compose.production.yml up -d
+```    
+Установить миграции:    
+```
+    docker compose -f docker-compose.production.yml exec backend python manage.py migrate
+```
+Собрать статику:
+```
+    docker compose -f docker-compose.production.yml exec backend python manage.py collectstatic
+```
+Копировать статику:    
+```
+    docker compose -f docker-compose.production.yml exec backend cp -r /app/collected_static/. /backend_static/static/
+```
+### Разработчик.
+[FinalGun](https://github.com/FinalGun)
