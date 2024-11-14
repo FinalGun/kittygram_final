@@ -4,14 +4,14 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = 'django-insecure-cg6*%6d51ef8f4!r3*$vmxm4)abgjw8mo!4y-q*uq1!4$-89$'
 
 DEBUG = True
 
 ALLOWED_HOSTS = [
     '123.123.123.123',
-    'localhost', os.getenv('HOST'),
-    os.getenv('DNS')
+    'localhost', '89.169.168.35',
+    'ya-kittygramm.ddns.net'
 ]
 
 INSTALLED_APPS = [
